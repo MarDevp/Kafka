@@ -54,6 +54,6 @@ public class PageEventService {
                   .count(Materialized.as("page-count"))
                   .toStream()
                   .map((k,v)->new KeyValue<>("=>"+k.window().startTime()+k.window().endTime()+":"+k.key(),v));
-        };//
+        };
     }
 }
